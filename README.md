@@ -6,8 +6,7 @@
 ```diff
 
 + this will be highlighted in green
-
-
+123123
 - this will be highlighted in red
 
 
