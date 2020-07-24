@@ -4,11 +4,6 @@
 - tomcat shutdown有时无法关闭tomcat进程原因，tomcat的startup和shutdown实现流程
 
 ```diff
-
-+ this will be highlighted in green
-123123
-- this will be highlighted in red
-
-
++ this will be highlighted in green 
 ```
 
