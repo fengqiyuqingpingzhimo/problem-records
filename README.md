@@ -11,11 +11,9 @@
   ```
 ### 2020年7月30日
 - nodejs|webpack|vue 路由动态加载，使用import方式会把路径下所有文件全部引入导致启动重载都非常慢，改为require,import和require写法及区别
- ```
- ...
- // component:() => import(`@/views/${url}`),
- component:resolve => require([`@/views/${url}`], resolve),
- ...
+ ```diff 
+ + component:resolve => require([`@/views/${url}`], resolve),
+ - component:() => import(`@/views/${url}`), 
  ```
 
 
