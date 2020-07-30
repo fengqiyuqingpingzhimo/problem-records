@@ -15,5 +15,10 @@
  + component:resolve => require([`@/views/${url}`], resolve),
  - component:() => import(`@/views/${url}`), 
  ```
+ - vue组件scoped不生效问题
+  ```
+  1.scoped实现组件的私有化，不对全局造成样式污染，表示当前style属性只属于当前模块，不生效的原因可能是给另一个组件添加样式,无法起到穿透效果，可使用以下写法
+    >>>或者/deep/
+  ```
 
 
