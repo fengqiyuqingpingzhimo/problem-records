@@ -67,28 +67,28 @@ public class ApiTestDao extends BaseDao{
 	}
   
 	@SuppressWarnings({"rawtypes", "unchecked"})
-  public Object getData () throws IOException {
-  final List<Map<String, Object>> list=new ArrayList<Map<String, Object>>();
-  final Writer writer=new FileWriter("c:\\oracle_clob_back.txt");  
-  final OutputStream os=new FileOutputStream(new File("c:\\oracle_blob_back.jpg"));  
-  return (List<Map<String, Object>>)db.query("SELECT DF,DF1,CS FROM A_TEST WHERE CS='123456789000005'", new ResultSetExtractor() {
-    public Object extractData(ResultSet rs) throws SQLException,DataAccessException {
-      while(rs.next()){
-        Map<String, Object> map=new HashMap<String, Object>();
-        map.put("df", lobHandler.getClobAsString(rs, 1));
-        map.put("df1", new String(lobHandler.getBlobAsBytes(rs, 2)));
-        map.put("cs", rs.getString(3));
-                   try {
-                    FileCopyUtils.copy(lobHandler.getClobAsCharacterStream(rs,1),writer);  
-          FileCopyUtils.copy(lobHandler.getBlobAsBinaryStream(rs,2),os);
-        } catch (IOException e) {
-          // TODO Auto-generated catch block
-          e.printStackTrace();
-        }  
-        list.add(map);
-      }
-      return list;
-    }
-  });
-  }
+	  public Object getData () throws IOException {
+	  final List<Map<String, Object>> list=new ArrayList<Map<String, Object>>();
+	  final Writer writer=new FileWriter("c:\\oracle_clob_back.txt");  
+	  final OutputStream os=new FileOutputStream(new File("c:\\oracle_blob_back.jpg"));  
+	  return (List<Map<String, Object>>)db.query("SELECT DF,DF1,CS FROM A_TEST WHERE CS='123456789000005'", new ResultSetExtractor() {
+	    public Object extractData(ResultSet rs) throws SQLException,DataAccessException {
+	      while(rs.next()){
+		Map<String, Object> map=new HashMap<String, Object>();
+		map.put("df", lobHandler.getClobAsString(rs, 1));
+		map.put("df1", new String(lobHandler.getBlobAsBytes(rs, 2)));
+		map.put("cs", rs.getString(3));
+			   try {
+			    FileCopyUtils.copy(lobHandler.getClobAsCharacterStream(rs,1),writer);  
+		  FileCopyUtils.copy(lobHandler.getBlobAsBinaryStream(rs,2),os);
+		} catch (IOException e) {
+		  // TODO Auto-generated catch block
+		  e.printStackTrace();
+		}  
+		list.add(map);
+	      }
+	      return list;
+	    }
+	  });
+	  }
 }
