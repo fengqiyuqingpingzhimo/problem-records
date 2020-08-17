@@ -21,6 +21,6 @@
     给另一个组件添加样式,无法起到穿透效果，可使用以下写法 >>>或者/deep/
   ```
 ### 2020年8月17日
-- 前端 pwa(Progressive Web App),Service worker,Lavas PWA
+- 前端 pwa(Progressive Web App),Service worker,Lavas PWA,增强浏览器或者原生app的效果，页面或者接口缓存，通知推送等
 
 
