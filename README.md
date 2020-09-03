@@ -22,5 +22,11 @@
   ```
 ### 2020年8月17日
 - 前端 pwa(Progressive Web App),Service worker,Lavas PWA,增强浏览器或者原生app的效果，页面或者接口缓存，通知推送等
-
+### 2020年9月3日
+- nodejs打包，遇到caniuse-lite is outdated. Please run next command `npm update`
+  ```
+    突如其来的打包问题：caniuse-lite is outdated. Please run next command npm update
+    npm update之后并没有解决---网上查找解决方案解决
+    1.直接删除该项目node_modules下面的caniuse-lite和browserslist这两个文件夹，然后npm i caniuse-lite browserslist
+  ```
 
